@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <!-- Version 0.2.1 -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>PIP Timesheets - Teacher Portal</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <header>
+    <div id="header">
+      <center><img src="risdlogoCW.png" align="right" height="50" width="50"/></center>
+      <h1><center>RISD PIP Timesheets</center></h1>
+      <form action="https://risddigitaltimesheet.pip2021.repl.co/teacherGulley.html">
+        <input type="submit" value="Back"   />
+      </form>
+      <h3><center>Teacher Portal<center></h3>
+      <h3><center>Week of April 5th<center></h3>
+      <hr>
+    </div>
+  </header>
+  <body>
+    <script src="script.js"></script>
+    <center>
+      <table>
+        <tr id="header">
+          <th scope="col">Student Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Hours</th>
+          <th scope="col"><center>Details</center></th>
+        </tr>
+        <tr id="astro">
+          <td>Astro Daniels</td>
+          <td>Incomplete</td>
+          <td style="background-color: red;">0</td>
+          <td>
+            <center>
+              <form action="https://teacheralldemo.pip2021.repl.co/astro4-5.html">
+                <input type="submit" value="Details" />
+              </form>
+            </center>
+          </td>
+        </tr>
+        <tr id="bob">
+          <td>Bob Smith</td>
+          <td>Incomplete</td>
+          <td style="background-color: red;">0</td>
+          <td>
+            <center>
+              <form action="https://teacheralldemo.pip2021.repl.co/astro4-5.html">
+                <input type="submit" value="Details" />
+              </form>
+            </center>
+          </td>
+        </tr>
+        <tr id="cash">
+          <td>Cash Ryan</td>
+          <td>Incomplete</td>
+          <td style="background-color: red;">0</td>
+          <td>
+            <center>
+              <form action="https://teacheralldemo.pip2021.repl.co/astro4-5.html">
+                <input type="submit" value="Details" />
+              </form>
+            </center>
+          </td>
+        </tr>
+      </table>
+    </center>
+  </body>
+  <footer>
+    <div id="status">
+      <center><label for="currentDateTime">Last Updated:</label>
+      <center><input type="text" id="currentDateTime" style="text-align:center; border: 0px; background-color: white;"></center>
+      <script>
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
+        document.getElementById("currentDateTime").value = dateTime;
+      </script>
+    </div>
+    <hr>
+    <div id="copyright">
+      <center><h4>© 2020 - RISD Student</h4></center>
+      <center><p>Version 0.3.2</p></center>
+    </div>
+  </footer>
+</html>

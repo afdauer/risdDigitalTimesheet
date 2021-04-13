@@ -24,24 +24,13 @@
     <center>
       <form>
         <center>
-          <input type="text" id="username" style="background-color: white; border-color: gainsboro;" value="agulley"/>
+          <input type="text" id="username" style="background-color: white; border-color: gainsboro;"/>
           <label for="username" class="email">Username</label>
           <br>
           <input type="password" id="password" class="pswrd" style="background-color: white; border-color: gainsboro;"/>
           <label for="username">Password</label>
           <br>
-          <input type="button" value="Login" onclick="clickHandle(event, 'email')" />
-          <!--<script>
-            function clickHandle(evt, emailAddress)
-            {
-              var gulleyEmail = "agulley@g.risd.org";
-              var shanksEmail = "ashanks@g.risd.org";
-
-              var enteredEmail = document.getElementsByClassName("email");
-              
-              alert(enteredEmail);
-            }
-          </script>-->
+          <input type="button" value="Login" onclick="logIn(event,username,password)" />
         </center>
       </form>
     </center>
