@@ -20,17 +20,28 @@
     </div>
   </header>
   <body>
-    <script src="script.js"></script>
+    <script src="teacherLogin.js"></script>
     <center>
-      <form action="https://teacheralldemo.pip2021.repl.co">
+      <form>
         <center>
-          <input type="text" id="username" style="background-color: white; border-color: gainsboro;"/>
-          <label for="username">Username</label>
+          <input type="text" id="username" style="background-color: white; border-color: gainsboro;" value="agulley"/>
+          <label for="username" class="email">Username</label>
           <br>
-          <input type="password" id="password" style="background-color: white; border-color: gainsboro;"/>
+          <input type="password" id="password" class="pswrd" style="background-color: white; border-color: gainsboro;"/>
           <label for="username">Password</label>
           <br>
-          <input type="submit" value="Login" />
+          <input type="button" value="Login" onclick="clickHandle(event, 'email')" />
+          <!--<script>
+            function clickHandle(evt, emailAddress)
+            {
+              var gulleyEmail = "agulley@g.risd.org";
+              var shanksEmail = "ashanks@g.risd.org";
+
+              var enteredEmail = document.getElementsByClassName("email");
+              
+              alert(enteredEmail);
+            }
+          </script>-->
         </center>
       </form>
     </center>
