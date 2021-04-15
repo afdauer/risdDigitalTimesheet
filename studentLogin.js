@@ -4,12 +4,12 @@
 function logIn(evt, emailAddress, passWord)
 {
   var cs321096Email = "cs321096@g.risd.org";
-  var shanksEmail = "ashanks@g.risd.org";
+  var ad321196Email = "ad321196@g.risd.org";
 
   var enteredEmail = document.getElementById("username").value;
 
   var cs321096Pswrd = "123";
-  var shanksPswrd = "shanks-pip";
+  var ad321196Pswrd = "456";
 
   var enteredPswrd = document.getElementById("password").value;
 
@@ -20,10 +20,10 @@ function logIn(evt, emailAddress, passWord)
     location.href = 'https://risddigitaltimesheet.pip2021.repl.co/cs321096.html';
   }
 
-  if(enteredEmail == shanksEmail || enteredEmail == shanksPswrd)
+  if(enteredEmail == ad321196Email && enteredEmail == ad321196Pswrd)
   {
     //alert("Email found");
 
-    location.href = 'https://risddigitaltimesheet.pip2021.repl.co/teacherShanks.html';
+    location.href = 'https://risddigitaltimesheet.pip2021.repl.co/ad321196.html';
   }
 }
