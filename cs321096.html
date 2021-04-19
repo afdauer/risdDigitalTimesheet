@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width">
     <title>PIP Timesheets - Student Portal</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <header>
     <div id="header">
@@ -21,7 +22,7 @@
     </div>
   </header>
   <body>
-    <form id="times" action="https://sponsorDemo.pip2021.repl.co" method="GET">
+    <form id="times">
       <div id="timeInput">
         <center>
         <table>
@@ -91,6 +92,19 @@
         </center>
       </div>
     </form>
+     <script>
+      let url = new URL('https://dataSendTester.pip2021.repl.co?');
+      let params = new URLSearchParams(url.search.slice(1));
+      var monIn = document.getElementById("monIn").value;
+      var tueIn = document.getElementById("tueIn").value;
+      var wedIn = document.getElementById("wedIn").value;
+      var thurIn = document.getElementById("thurIn").value;
+
+      params.append('monIn', monIn);
+      params.append('tueIn', tueIn);
+      params.append('wedIn', wedIn);
+      params.append('thurIn', thurIn);
+    </script>
   </body>
   <footer>
     <div id="status">
