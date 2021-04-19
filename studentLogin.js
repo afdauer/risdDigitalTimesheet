@@ -20,10 +20,20 @@ function logIn(evt, emailAddress, passWord)
     location.href = 'https://risddigitaltimesheet.pip2021.repl.co/cs321096.html';
   }
 
-  if(enteredEmail == ad321196Email && enteredEmail == ad321196Pswrd)
+  if(enteredEmail == ad321196Email && enteredPswrd == ad321196Pswrd)
   {
     //alert("Email found");
 
     location.href = 'https://risddigitaltimesheet.pip2021.repl.co/ad321196.html';
   }
+
+  /*if(enteredEmail != ad321196Email || enteredEmail != cs321096Email)
+  {
+    alert("Incorrect Email");
+  }
+
+  if(enteredPswrd != ad321196Pswrd || enteredEmail != cs321096Pswrd)
+  {
+    alert("Incorrect Password");
+  }*/
 }
