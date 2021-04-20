@@ -12,14 +12,17 @@
     <div id="header">
       <center><img src="risdlogoCW.png" align="right" height="50" width="50"/></center>
       <h1><center>RISD PIP Timesheets</center></h1>
-      <button>Back</button>
+      <form action="https://risddigitaltimesheet.pip2021.repl.co/sponsor-login.html">
+        <input type="submit" value="Logout"   />
+      </form>
       <h3><center>Sponsor Portal<center></h3>
       <hr>
     </div>
   </header>
   <body>
     <script src="sendData.js"></script>
-    <center><p>Your student has entered the following information for their timesheet:</center>
+    <center><p>Your student has entered the following information for their timesheet:</p></center>
+    <center><p>Anderson Dauer  |  Week of 4/5</p></center>
     <div id="timeInput">
       <center>
       <table>
@@ -29,45 +32,59 @@
           <th scope="col">End Time</th>
         </tr>
         <tr id="mon">
-          <!--<input name="test" style="background-color: white;"></input>-->
-          <td></td>
+          <td>4/5 - Monday</td>
           <td>
-
+            2:30 PM
+            <!--<label for="monIn">Start Time</label>-->
           </td>
           <td>
-
+            4:30 PM
           </td>
         </tr>
         <tr id="tue">
-          <td></td>
+          <td>4/6 - Tuesday</td>
           <td>
-  
+            3:30 PM
           </td>
           <td>
-           
+            4:30 PM
           </td>
         </tr>
         <tr id="wed">
-          <td></td>
+          <td>4/7 - Wednesday</td>
           <td>
-           
+            2:30 PM
           </td>
           <td>
-           
+            4:30 PM
           </td>
         </tr>
         <tr id="thur">
-          <td></td>
+          <td>4/8 - Thursday</td>
           <td>
-            
+            3:30 PM
           </td>
           <td>
-            
+            4:30 PM
           </td>          
         </tr>
       </table>
       <!--Sponsor Email Input-->
       <br>
+      <table>
+        <tr id="header">
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+        </tr>
+        <tr>
+          <td></td>
+          <td><b>Digital Signature</b></td>
+          <td><input type="text" style="background-color: white; border-color: gainsboro;"></td>
+          <td></td>
+        </tr>
+      </table>
       <button>Save</button><button>Submit</button>
       </center>
     </div>

@@ -20,19 +20,23 @@
     </div>
   </header>
   <body>
-    <script src="script.js"></script>
+    <script src="sponsorLogin.js"></script>
     <center>
       <form action="https://risddigitaltimesheet.pip2021.repl.co/sponsorRobert.html">
         <center>
           <input type="text" id="username" style="background-color: white; border-color: gainsboro;"/>
-          <label for="username">Username</label>
+          <label for="username" class="email">Username</label>
           <br>
-          <input type="password" id="password" style="background-color: white; border-color: gainsboro;"/>
+          <input type="password" id="password" class="pswrd" style="background-color: white; border-color: gainsboro;"/>
           <label for="username">Password</label>
           <br>
-          <input type="submit" value="Login" />
+          <input type="button" value="Login" onclick="logIn(event,username,password)">
         </center>
       </form>
+      <h3>For Demo Purposes Only</h3>
+      <p>Username: r.sorenson</p>
+      <p>Password: sorenson-pip</p>
+      <hr>
     </center>
   </body>
   <footer>

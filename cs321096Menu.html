@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <!-- Version 0.1.6 Alpha -->
+  <!-- Last Updated: 4/5/21 -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>PIP Timesheets - Student Portal</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <header>
+    <div id="header">
+      <center><img src="risdlogoCW.png" align="right" height="50" width="50"/></center>
+      <h1><center>RISD PIP Timesheets</center></h1>
+      <form action="https://risddigitaltimesheet.pip2021.repl.co/student-login.html">
+        <input type="submit" value="Log Out"   />
+      </form>
+      <h3><center>Student Portal<center></h3>
+      <hr>
+    </div>
+  </header>
+  <body>
+    <!--<form id="times" action="https://sponsorDemo.pip2021.repl.co" method="GET">-->
+    <h3>Smith, Clara (cs321096@g.risd.org)</h3>
+      <div id="timeInput">
+        <center>
+        <table>
+          <tr id="header">
+            <th scope="col">Week of</th>
+            <th scope="col"><center>Status</center></th>
+            <th scope="col"><center>Hours</center></th>
+            <th scope="col"><center>Details</center></th>
+          </tr>
+          <!--<tr id="week3-29">
+          <td>March 29th</td>
+          <td><center>Completed</center></td>
+          <td><center>6</center></td>
+          <td>
+            <center>
+              <form action="https://studentdemo.pip2021.repl.co/week-of-3-29.html">
+                <input type="submit" value="Details" />
+              </form>
+            </center>
+          </td>
+        </tr>-->
+        <tr id="week4-5">
+          <td>April 5th</td>
+          <td><center>Completed</center></td>
+          <td><center>6</center></td>
+          <td>
+            <center>
+              <form action="https://risddigitaltimesheet.pip2021.repl.co/cs321096.html">
+                <input type="submit" value="Details" />
+              </form>
+            </center>
+          </td>
+        </tr>
+        </table>
+        </center>
+      </div>
+    <!--</form>-->
+  </body>
+  <footer>
+    <div id="status">
+      <center><label for="currentDateTime">Last Updated:</label>
+      <center><input type="text" id="currentDateTime" style="text-align:center; border: 0px; background-color: white;"></center>
+      <script>
+        var today = new Date();
+        var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var dateTime = date+' '+time;
+        document.getElementById("currentDateTime").value = dateTime;
+      </script>
+    </div>
+    <hr>
+    <div id="copyright">
+      <center><h4>© 2020 - RISD Student</h4></center>
+    </div>
+  </footer>
+</html>

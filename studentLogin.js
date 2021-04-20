@@ -17,7 +17,7 @@ function logIn(evt, emailAddress, passWord)
   {
     //alert("Email found");
 
-    location.href = 'https://risddigitaltimesheet.pip2021.repl.co/cs321096.html';
+    location.href = 'https://risddigitaltimesheet.pip2021.repl.co/cs321096Menu.html';
   }
 
   if(enteredEmail == ad321196Email && enteredPswrd == ad321196Pswrd)

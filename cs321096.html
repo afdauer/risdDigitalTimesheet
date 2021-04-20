@@ -13,13 +13,16 @@
     <div id="header">
       <center><img src="risdlogoCW.png" align="right" height="50" width="50"/></center>
       <h1><center>RISD PIP Timesheets</center></h1>
-      <form action="https://studentdemo.pip2021.repl.co">
+      <form action="https://risddigitaltimesheet.pip2021.repl.co/cs321096Menu.html">
         <input type="submit" value="Back"   />
       </form>
-      <h3><center>Student Portal<center></h3>
-      <h3><center>Week of 4/5/2021</center></h3>
+      <h3 id="userName"><center>Clara Smith<center></h3>
+      <h3 id ="weekOf"><center>Week of 4/5/2021</center></h3>
       <hr>
     </div>
+    <script>
+      
+    </script>
   </header>
   <body>
     <form id="times">
@@ -74,11 +77,12 @@
             <td>4:20 PM CST</td>
           </tr>
         </table>
+        <input id="sendEmail" type="submit" value="Send to Sponsor">
         <!--Sponsor Email Input-->
-        <input type="email" id="sponsorEmail" name="sponsorEmail" value="" style="background-color: white; border-color: gainsboro;">
+        <!-- <input type="email" id="sponsorEmail" name="sponsorEmail" value="" style="background-color: white; border-color: gainsboro;">
         <label for="sponsorEmail">Sponsor's Email</label>
         <br>
-        <button >Save</button><button onclick="sendMail(); return false">Submit</button>
+        <button >Save</button><button onclick="sendMail(); return false">Submit</button> -->
         <script>
           function sendMail() {
           var sponsorEmail = document.getElementById('sponsorEmail').value
@@ -92,23 +96,106 @@
         </center>
       </div>
     </form>
-     <script>
+    <!-- <form id="test">
+      <input id="tester">
+    </form> -->
+    <script>
       let url = new URL('https://dataSendTester.pip2021.repl.co?');
       let params = new URLSearchParams(url.search.slice(1));
       var monIn = document.getElementById("monIn").value;
+       var monOut = document.getElementById("monOut").value;
       var tueIn = document.getElementById("tueIn").value;
+      var tueOut = document.getElementById("tueOut").value;
       var wedIn = document.getElementById("wedIn").value;
+      var wedOut = document.getElementById("wedOut").value;
       var thurIn = document.getElementById("thurIn").value;
+      var thurOut = document.getElementById("thurOut").value;
+      var user = document.getElementById("userName").value;
+      status = "Incomplete";
 
+      params.append('user', user); 
       params.append('monIn', monIn);
+      params.append('monOut', monOut);
       params.append('tueIn', tueIn);
+      params.append('tueOut', tueOut);
       params.append('wedIn', wedIn);
+      params.append('wedOut', wedOut);
       params.append('thurIn', thurIn);
+      params.append('thurOut', thurOut);
+    </script>
+    <script>
+      //update this with your js_form selector
+      var form_id_js = "times";
+
+      var data_js = {
+        "access_token": "rwf9lg9ip8ayrjmc01cj3q9g"
+      };
+
+      function js_onSuccess() {
+        // remove this to avoid redirect
+        sendButton.value = 'Sent!';
+        window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+      }
+
+      function js_onError(error) {
+        // remove this to avoid redirect
+        window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+      }
+
+      var sendButton = document.getElementById("sendEmail");
+
+      function js_send() {
+        sendButton.value='Sending…';
+        sendButton.disabled=true;
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+          if (request.readyState == 4 && request.status == 200) {
+            js_onSuccess();
+          } else
+            if(request.readyState == 4) {
+              js_onError(request.response);
+            }
+        };
+
+        // var subject = document.querySelector("#" + form_id_js + " [name='subject']").value;
+        // var message = document.querySelector("#" + form_id_js + " [name='text']").value;
+        var subject = "Weekly timesheet for Clara Smith";
+        //  "Weekly Timesheet for " + document.getElementbyId("userName").value + " for " document.getElementById("weekOf").value;
+        var message = 
+        "Your intern, " + document.getElementbyId("userName").value " has completed their weekly timesheet for this week. Here is a link to view it: " + window.location.href;
+        data_js['subject'] = subject;
+        data_js['text'] = message;
+        var params = toParams(data_js);
+
+        request.open("POST", "https://postmail.invotes.com/send", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        request.send(params);
+
+        return false;
+      }
+
+      sendButton.onclick = js_send;
+
+      function toParams(data_js) {
+        var form_data = [];
+        for ( var key in data_js ) {
+            form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+        }
+
+        return form_data.join("&");
+      }
+
+      var js_form = document.getElementById(form_id_js);
+      js_form.addEventListener("submit", function (e) {
+        e.preventDefault();
+      });
     </script>
   </body>
   <footer>
     <div id="status">
-      <center><h4>Timesheet Status: Incomplete</h4></center>
+      <center><h4>Timesheet Status: 
+      <script>document.write(status)</script></h4></center>
       <center><label for="currentDateTime">Last Updated:</label>
       <center><input type="text" id="currentDateTime" style="text-align:center; border: 0px; background-color: white;"></center>
       <script>
