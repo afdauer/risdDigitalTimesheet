@@ -8,8 +8,8 @@ function logIn(evt, emailAddress, passWord)
 
   var enteredEmail = document.getElementById("username").value;
 
-  var cs321096Pswrd = "123";
-  var ad321196Pswrd = "456";
+  var cs321096Pswrd = "smith-pip";
+  var ad321196Pswrd = "dauer-pip";
 
   var enteredPswrd = document.getElementById("password").value;
 
@@ -24,7 +24,7 @@ function logIn(evt, emailAddress, passWord)
   {
     //alert("Email found");
 
-    location.href = 'https://risddigitaltimesheet.pip2021.repl.co/ad321196.html';
+    location.href = 'https://risddigitaltimesheet.pip2021.repl.co/cs321096Menu.html';
   }
 
   /*if(enteredEmail != ad321196Email || enteredEmail != cs321096Email)

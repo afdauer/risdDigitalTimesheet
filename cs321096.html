@@ -16,7 +16,7 @@
       <form action="https://risddigitaltimesheet.pip2021.repl.co/cs321096Menu.html">
         <input type="submit" value="Back"   />
       </form>
-      <h3 id="userName"><center>Clara Smith<center></h3>
+      <h3 id="userName"><center>Anderson Dauer<center></h3>
       <h3 id ="weekOf"><center>Week of 4/5/2021</center></h3>
       <hr>
     </div>
@@ -103,7 +103,7 @@
       let url = new URL('https://dataSendTester.pip2021.repl.co?');
       let params = new URLSearchParams(url.search.slice(1));
       var monIn = document.getElementById("monIn").value;
-       var monOut = document.getElementById("monOut").value;
+      var monOut = document.getElementById("monOut").value;
       var tueIn = document.getElementById("tueIn").value;
       var tueOut = document.getElementById("tueOut").value;
       var wedIn = document.getElementById("wedIn").value;
@@ -125,6 +125,7 @@
     </script>
     <script>
       //update this with your js_form selector
+      var sponsorURL = 'https://risddigitaltimesheet.pip2021.repl.co/sponsorRobert.html';
       var form_id_js = "times";
 
       var data_js = {
@@ -159,10 +160,10 @@
 
         // var subject = document.querySelector("#" + form_id_js + " [name='subject']").value;
         // var message = document.querySelector("#" + form_id_js + " [name='text']").value;
-        var subject = "Weekly timesheet for Clara Smith";
+        var subject = "Timesheet for Anderson Dauer for week of 4/5/21";
         //  "Weekly Timesheet for " + document.getElementbyId("userName").value + " for " document.getElementById("weekOf").value;
-        var message = 
-        "Your intern, " + document.getElementbyId("userName").value " has completed their weekly timesheet for this week. Here is a link to view it: " + window.location.href;
+        var message = "Your intern has completed their time sheet for this week. Click on the link below to confirm:\n\n" + sponsorURL;
+        // "Your intern, " + document.getElementbyId("userName").value " has completed their weekly timesheet for this week. Here is a link to view it: " + 
         data_js['subject'] = subject;
         data_js['text'] = message;
         var params = toParams(data_js);
