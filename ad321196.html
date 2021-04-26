@@ -7,61 +7,196 @@
     <meta name="viewport" content="width=device-width">
     <title>PIP Timesheets - Student Portal</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <header>
     <div id="header">
       <center><img src="risdlogoCW.png" align="right" height="50" width="50"/></center>
       <h1><center>RISD PIP Timesheets</center></h1>
-      <form action="https://risddigitaltimesheet.pip2021.repl.co/student-login.html">
-        <input type="submit" value="Log Out"   />
+      <form action="https://risddigitaltimesheet.pip2021.repl.co/cs321096Menu.html">
+        <input type="submit" value="Back"   />
       </form>
-      <h3><center>Student Portal<center></h3>
+      <h3 id="userName"><center>Anderson Dauer<center></h3>
+      <h3 id ="weekOf"><center>Week of 4/5/2021</center></h3>
       <hr>
     </div>
+    <script>
+      
+    </script>
   </header>
   <body>
-    <form id="times" action="https://sponsorDemo.pip2021.repl.co" method="GET">
-    <h3>Dauer, Anderson (ad321196@g.risd.org)</h3>
+    <form id="times">
       <div id="timeInput">
         <center>
         <table>
           <tr id="header">
-            <th scope="col">Week of</th>
-            <th scope="col"><center>Status</center></th>
-            <th scope="col"><center>Hours</center></th>
-            <th scope="col"><center>Details</center></th>
+            <th scope="col">Date</th>
+            <th scope="col">Start Time</th>
+            <th scope="col">End Time</th>
           </tr>
-          <tr id="week3-29">
-          <td>March 29th</td>
-          <td><center>Completed</center></td>
-          <td><center>6</center></td>
-          <td>
-            <center>
-              <form action="https://studentdemo.pip2021.repl.co/week-of-3-29.html">
-                <input type="submit" value="Details" />
-              </form>
-            </center>
-          </td>
-        </tr>
-        <tr id="week4-5">
-          <td>April 5th</td>
-          <td><center>Completed</center></td>
-          <td><center>6</center></td>
-          <td>
-            <center>
-              <form action="https://studentdemo.pip2021.repl.co/week-of-4-5.html">
-                <input type="submit" value="Details" />
-              </form>
-            </center>
-          </td>
-        </tr>
+          <tr id="mon">
+            <td>4/5 - Monday</td>
+            <td>
+              <input type="time" id="monIn" name="monIn" value="monIn" style="background-color: white; border-color: gainsboro;">
+              <!--<label for="monIn">Start Time</label>-->
+            </td>
+            <td>
+              <input type="time" id="monOut" name="monOut" value="monOut" style="background-color: white; border-color: gainsboro;">
+            </td>
+          </tr>
+          <tr id="tue">
+            <td>4/6 - Tuesday</td>
+            <td>
+              <input type="time" id="tueIn" name="tueIn" value="tueIn" style="background-color: white; border-color: gainsboro;">
+            </td>
+            <td>
+              <input type="time" id="tueOut" name="tueOut" value="tueOut" style="background-color: white; border-color: gainsboro;">
+            </td>
+          </tr>
+          <tr id="wed">
+            <td>4/7 - Wednesday</td>
+            <td>
+              <input type="time" id="wedIn" name="wedIn" value="wedIn" style="background-color: white; border-color: gainsboro;">
+            </td>
+            <td>
+              <input type="time" id="wedOut" name="wedOut" value="wedOut" style="background-color: white; border-color: gainsboro;">
+            </td>
+          </tr>
+          <tr id="thur">
+            <td>4/8 - Thursday</td>
+            <td>
+              <input type="time" id="thurIn" name="thurIn" value="thurIn" style="background-color: white; border-color: gainsboro;">
+            </td>
+            <td>
+              <input type="time" id="thurOut" name="thurOut" value="thurOut" style="background-color: white; border-color: gainsboro;">
+            </td>          
+          </tr>
+          <tr id="fri">
+            <td>4/9 - Friday (Zoom)</td>
+            <td>3:30 PM CST</td>
+            <td>4:20 PM CST</td>
+          </tr>
         </table>
+        <input id="sendEmail" type="submit" value="Send to Sponsor">
+        <!--Sponsor Email Input-->
+        <!-- <input type="email" id="sponsorEmail" name="sponsorEmail" value="" style="background-color: white; border-color: gainsboro;">
+        <label for="sponsorEmail">Sponsor's Email</label>
+        <br>
+        <button >Save</button><button onclick="sendMail(); return false">Submit</button> -->
+        <script>
+          function sendMail() {
+          var sponsorEmail = document.getElementById('sponsorEmail').value
+          var link = "mailto:" + sponsorEmail
+             + "?cc=myCCaddress@example.com"
+             + "&subject=" + encodeURIComponent("This is my subject")
+             + "&body=" + encodeURIComponent(document.getElementById('timeInput').value) ;
+          window.location.href = link;
+          }
+        </script>
         </center>
       </div>
     </form>
+    <!-- <form id="test">
+      <input id="tester">
+    </form> -->
+    <script>
+      let url = new URL('https://dataSendTester.pip2021.repl.co?');
+      let params = new URLSearchParams(url.search.slice(1));
+      var monIn = document.getElementById("monIn").value;
+      var monOut = document.getElementById("monOut").value;
+      var tueIn = document.getElementById("tueIn").value;
+      var tueOut = document.getElementById("tueOut").value;
+      var wedIn = document.getElementById("wedIn").value;
+      var wedOut = document.getElementById("wedOut").value;
+      var thurIn = document.getElementById("thurIn").value;
+      var thurOut = document.getElementById("thurOut").value;
+      var user = document.getElementById("userName").value;
+      status = "Incomplete";
+
+      params.append('user', user); 
+      params.append('monIn', monIn);
+      params.append('monOut', monOut);
+      params.append('tueIn', tueIn);
+      params.append('tueOut', tueOut);
+      params.append('wedIn', wedIn);
+      params.append('wedOut', wedOut);
+      params.append('thurIn', thurIn);
+      params.append('thurOut', thurOut);
+    </script>
+    <script>
+      //update this with your js_form selector
+      var sponsorURL = 'https://risddigitaltimesheet.pip2021.repl.co/sponsorRobert.html';
+      var form_id_js = "times";
+
+      var data_js = {
+        "access_token": "rwf9lg9ip8ayrjmc01cj3q9g"
+      };
+
+      function js_onSuccess() {
+        // remove this to avoid redirect
+        sendButton.value = 'Sent!';
+        window.location = window.location.pathname + "?message=Email+Successfully+Sent%21&isError=0";
+      }
+
+      function js_onError(error) {
+        // remove this to avoid redirect
+        window.location = window.location.pathname + "?message=Email+could+not+be+sent.&isError=1";
+      }
+
+      var sendButton = document.getElementById("sendEmail");
+
+      function js_send() {
+        sendButton.value='Sending…';
+        sendButton.disabled=true;
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function() {
+          if (request.readyState == 4 && request.status == 200) {
+            js_onSuccess();
+          } else
+            if(request.readyState == 4) {
+              js_onError(request.response);
+            }
+        };
+
+        // var subject = document.querySelector("#" + form_id_js + " [name='subject']").value;
+        // var message = document.querySelector("#" + form_id_js + " [name='text']").value;
+        var subject = "Timesheet for Anderson Dauer for week of 4/5/21";
+        //  "Weekly Timesheet for " + document.getElementbyId("userName").value + " for " document.getElementById("weekOf").value;
+        var message = "Your intern has completed their time sheet for this week. Click on the link below to confirm:\n\n" + sponsorURL;
+        // "Your intern, " + document.getElementbyId("userName").value " has completed their weekly timesheet for this week. Here is a link to view it: " + 
+        data_js['subject'] = subject;
+        data_js['text'] = message;
+        var params = toParams(data_js);
+
+        request.open("POST", "https://postmail.invotes.com/send", true);
+        request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+        request.send(params);
+
+        return false;
+      }
+
+      sendButton.onclick = js_send;
+
+      function toParams(data_js) {
+        var form_data = [];
+        for ( var key in data_js ) {
+            form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
+        }
+
+        return form_data.join("&");
+      }
+
+      var js_form = document.getElementById(form_id_js);
+      js_form.addEventListener("submit", function (e) {
+        e.preventDefault();
+      });
+    </script>
   </body>
   <footer>
     <div id="status">
+      <center><h4>Timesheet Status: 
+      <script>document.write(status)</script></h4></center>
       <center><label for="currentDateTime">Last Updated:</label>
       <center><input type="text" id="currentDateTime" style="text-align:center; border: 0px; background-color: white;"></center>
       <script>
